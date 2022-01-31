@@ -8,7 +8,7 @@ export async function validateLanding (landing, plateau) {
     const coordPlateau = await transformIntoArray(plateau)
 
 
-    if (!landing.match(/(^[0-9]\d*) ([0-9]\d*) ([NSEW]*$)/g)) {
+    if (!landing.match(/(^[0-9]\d*) ([0-9]\d*) ([NSEW]$)/g)) {
         throw new Error (error.invalidLandingFormat)
     } else if ((parseInt(coordLanding[0]) > parseInt(coordPlateau[0])) || (parseInt(coordLanding[1]) > parseInt(coordPlateau[1]))) {
         throw new Error (error.invalidLandingCoordinates)
